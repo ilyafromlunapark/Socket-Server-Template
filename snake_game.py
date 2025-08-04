@@ -3,8 +3,18 @@
 Используется в Text DAT для отображения игрового поля
 """
 
-import random
-import time
+# Импорты для TouchDesigner
+try:
+    import random
+except:
+    import tdu
+    random = tdu.Dependency("random")
+
+try:
+    import time
+except:
+    import tdu
+    time = tdu.Dependency("time")
 
 class SnakeGame:
     def __init__(self, width=20, height=15):
